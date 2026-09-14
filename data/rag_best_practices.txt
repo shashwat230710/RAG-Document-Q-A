@@ -1,0 +1,10 @@
+RAG Pipeline Best Practices & Implementation Guide
+
+1. Single Retrieval Architecture:
+Never call the vector store retriever multiple times within a single request pipeline. In naive implementations, developers often retrieve documents once for the context string and once again for generating the source citation list. Using RunnableParallel ensures the vector store is queried once, guaranteeing deterministic output and half the embedding compute.
+
+2. Deterministic Ingestion:
+Chunk-level deduplication prevents index bloat. By hashing chunk text and prefixing with source and page index, re-ingestion performs upserts. Use the --reset flag when modifying chunk parameters like CHUNK_SIZE=800 or CHUNK_OVERLAP=120.
+
+3. Evaluation with RAGAS:
+Evaluate retrieval quality using four primary metrics: Faithfulness, Response Relevancy, Context Precision, and Context Recall. Test sets should contain representative questions with verifiable ground truth.

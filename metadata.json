@@ -1,0 +1,6 @@
+{
+  "name": "RAG Document Q&A",
+  "description": "Production-ready RAG Document Q&A system with single-retrieval LCEL pipeline, Chroma vector store, deterministic chunk IDs, FastAPI-compatible API, and RAGAS evaluation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

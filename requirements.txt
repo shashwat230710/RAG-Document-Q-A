@@ -1,0 +1,31 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+
+# Core LangChain 1.x triad (the ecosystem did a major 0.3 -> 1.0 restructuring
+# after the original stack was pinned; these are the versions confirmed
+# current as of Sep 2026 — re-check before a fresh install).
+langchain-core>=1.6
+langchain>=1.0
+langchain-openai>=1.6
+langchain-chroma>=1.0
+langchain-text-splitters>=1.0
+langchain-huggingface>=0.1
+
+# Archived/sunset upstream (June 2026) — still installable and still what the
+# current LangChain docs show for PyPDFDirectoryLoader/DirectoryLoader, but
+# it will get no further bug or security fixes. Pin the version you test with.
+langchain-community>=0.3.3
+
+sentence-transformers>=3.2
+chromadb>=0.5
+pypdf>=5.0
+python-dotenv>=1.0
+pydantic>=2.9
+
+# ragas moved to a collections-based metrics API (SingleTurnSample /
+# EvaluationDataset) — app/eval.py below targets this, not the old
+# snake_case `from ragas.metrics import faithfulness` API.
+ragas>=0.4
+
+openai>=1.51
+pandas>=2.2
